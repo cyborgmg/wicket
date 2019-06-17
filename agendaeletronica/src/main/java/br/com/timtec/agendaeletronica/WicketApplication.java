@@ -45,7 +45,7 @@ public class WicketApplication extends WebApplication
 		}
 		
 		try {
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/wicket", "root", "c6b94gmg");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "password");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

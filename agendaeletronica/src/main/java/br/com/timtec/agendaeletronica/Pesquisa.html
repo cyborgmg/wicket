@@ -5,8 +5,31 @@
 <title>Agtenda Eletronica</title>
 </head>
 <body>
-	<wicket:extend>
+<wicket:extend>
 		<h1 >Pesquisar Contatos</h1>
-	</wicket:extend>	
+		<form wicket:id="formularioPesquisa" >
+			<input type="text" placeholder="Digite um nome" wicket:id="pesquisaNome">
+			<button type="submit" wicket:id="butaoPesquisar">Pesquisar</button>
+		</form>
+		<br/>
+		<div wicket:id="divResultados">
+			<table border="1">
+				<tr>
+					<th>Nome</th>
+					<th>E-mail</th>
+					<th>Telefone</th>
+					<th>Estado Civil</th>
+					<th>Ação</th>
+				</tr>
+				<tr wicket:id="contatos">
+					<th wicket:id="nome">[Nome]</th>
+					<th wicket:id="email">[E-mail]</th>
+					<th wicket:id="telefone">[Telefone]</th>
+					<th wicket:id="estadoCivil">[Estado Civil]</th>
+					<th><a href="#">Editar</a></th>
+				</tr>
+			</table>
+		</div>
+</wicket:extend>	
 </body>
 </html>
