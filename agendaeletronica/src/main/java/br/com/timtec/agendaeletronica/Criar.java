@@ -27,9 +27,15 @@ public class Criar extends BasePage {
 	private static final long serialVersionUID = -6619311231415722854L;
 	
 	public Criar() {
+		
+		this(new Contato());
+		
+	}
+	
+	protected Criar(Contato contato) {
+		
 		add( new Label("titulo","Criação de Contatos") );
 		
-		Contato contato = new Contato();
 		CompoundPropertyModel<Contato> compoundPropertyModelContato = new CompoundPropertyModel<Contato>(contato);
 		Form<Contato> form = new Form<Contato>("formularioContato",compoundPropertyModelContato) {
 
@@ -79,7 +85,7 @@ public class Criar extends BasePage {
 		add(new FeedbackPanel("feedBackMessage",new ErrorLevelFeedbackMessageFilter(FeedbackMessage.ERROR)));
 	}
 	
-	private void salvar(Contato contatoSubmetido) {
+	protected void salvar(Contato contatoSubmetido) {
 		
 	 Connection	conexao = ((WicketApplication) getApplication()).getConexao();
 	 ContatoDAO dao = new ContatoDAO(conexao); 
